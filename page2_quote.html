@@ -4,8 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Quote</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            border: 1px solid #000;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 25px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+
+        h1 { margin-top: 0; }
+        h1, h2, h3 { font-weight: normal; }
+
+        .floor input {
+            display: block;
+            width: 175px;
+            margin: 15px 0;
+            padding: 8px;
+            border: 1.5px solid #000;
+            border-radius: 5px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .contact-form .radio-option {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 1px solid #000;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 120px;
+            padding: 8px;
+            font-size: 15px;
+            margin: 30px auto 0;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-    
+    <section class="card">
+        <h1>Your info</h1>
+        <p>Please fill out your information for approximation cost</p>
+
+        <form class="contact-form">
+            <h3>How many windows are on each floor you want cleaned?</h3>
+            <section class="floor">
+                <input type="text" name="first" placeholder="1st">
+                <input type="text" name="second" placeholder="2nd">
+                <input type="text" name="third" placeholder="3rd and above">
+            </section>
+
+            <h3>Do you want outside, inside/outside, or inside?</h3>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="location" value="outside" checked>
+                    Outside
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="location" value="inside-outside">
+                    Inside / Outside
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="location" value="inside">
+                    Inside
+                </label>
+            </div>
+
+            <h3>Want to send photos of your windows?</h3>
+            <button type="button">Upload Photos</button>
+
+            <h3>When are you available?</h3>
+            <section class="floor">
+                <input type="text" name="date" placeholder="Date">
+                <input type="text" name="email" placeholder="Email">
+            </section>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
 </body>
 </html>
